@@ -7,7 +7,11 @@ function criarContaView(req, res){
 }
 
 function loginContaView(req, res){
-    res.render(`login_conta.html`);
+    res.render(`login.html`);
+}
+
+function agendaView(req, res){
+    res.render(`agenda.html`);
 }
 
 function loginConta(req, res) {
@@ -18,25 +22,26 @@ function loginConta(req, res) {
     if (validCredentials) {
         console.log("Login successful for user:", email);
         req.session.isLoggedIn = true;
-        res.redirect('/home_page');
+        res.redirect('/agenda');
     } else {
         console.error("Login failed for user")
-        res.render('login_conta.html', { error: 'Email ou senha inválido' });
+        res.render('login.html', { error: 'Email ou senha inválido' });
     }
 }
 
 function cadastrarUsuario(req, res){
     let usuario = {
-        email:req.body.email,
-        senha:req.body.senha,
+        emailCadastro:req.body.emailCadastro,
+        senhaCadastro:req.body.senhaCadastro,
+        confirmSenhaCadastro:req.body.confirmSenhaCadastro,
         nome:req.body.nome,
         sobrenome:req.body.sobrenome,
         telefone:req.body.telefone,
-        pais:req.body.pais,
+        Pais:req.body.Pais,
         dataNascimento:req.body.dataNascimento
     }
     console.log(usuario);
-    res.redirect('/login_conta.html');
+    res.redirect('/login.html');
 }
 
 function cadastrarContato(req, res){
@@ -57,5 +62,6 @@ module.exports = {
     criarContaView,
     cadastrarUsuario,
     loginContaView,
-    cadastrarContato
+    cadastrarContato,
+    agendaView
 }
