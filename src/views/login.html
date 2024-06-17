@@ -13,7 +13,7 @@
         <div id="popup" class="popup">
             <img src="./assets/Logo Agenda de Contatos.png" alt="Logo do pop-up">
             <h2>Início de Sessão</h2>
-            <form action="/login_conta">
+            <form action="/login_conta" method="post">
                 <p>
                     <input type="email" id="email" name="email" placeholder="Email">
                 </p>
@@ -25,7 +25,7 @@
                     <label for="manter-login">Manter Login</label>
                 </p>
                 <p>
-                    <button class="btn-login">Login</button>
+                    <button  type="submit" class="btn-login">Login</button>
                 </p>
                 <p id="cadastrar">
                     <a href="cadastro.html">Não tem um login? Cadastre-se agora!</a>

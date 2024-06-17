@@ -11,7 +11,7 @@
     <div class="home">
         <div class="box-cadastro">
             <h2>Cadastre-se já!</h2>
-            <form action="agenda.html">
+            <form action="/cadastrar_usuario" method ="post">
                <p>
                 <input type="text" name="Nome" id="nome" placeholder="Nome" class="nomeSobrenome">
                 <input type="text" name="Sobrenome" id="sobrenome" placeholder="Sobrenome" class="nomeSobrenome">
@@ -23,19 +23,19 @@
                 <input type="text" name="Data de Nascimento" id="dataNascimento" placeholder="Data Nascimento" class="dados">
                </p>
                <p>
-                <input type="email" name="email" id="emailCadastro" placeholder="nome@example.com" class="dados">
+                <input type="email" name="emailCadastro" id="emailCadastro" placeholder="nome@example.com" class="dados">
                </p>
                <p>
-                <input type="password" name="senha" id="senhaCadastro" placeholder="Senha" class="dados">
+                <input type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Senha" class="dados">
                </p>
                <p>
-                <input type="password" name="senha" id="confirmSenhaCadastro" placeholder="Confirmar Senha" class="dados">
+                <input type="password" name="confirmSenhaCadastro" id="confirmSenhaCadastro" placeholder="Confirmar Senha" class="dados">
                </p>
                <p>
                 <input type="tel" name="telefone" id="telefone" placeholder="Número de Telefone" class="dados">
                </p>
                <p>
-                <button class="btn-cadastrar">Cadastrar</button>
+                <button type="submit" class="btn-cadastrar">Cadastrar</button>
                </p>
               
             </form>
