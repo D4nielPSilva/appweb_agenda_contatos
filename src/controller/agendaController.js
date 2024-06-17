@@ -17,11 +17,62 @@ function cadastrarContato(req, res){
         dataNascimento:req.body.dataNascimento
     }
     console.log(contato);
-    res.redirect('/home_page.html');
+    res.redirect('/agenda.html');
 }
+
+function listarContato(req,res){}
+function buscarContatos(req,res){}
+function editarContato(req,res){}
+function excluirContato(req,res){}
+
+function criarLista(req, res){
+    console.log(req.body);
+    let lista = {
+        nomeLista: req.body.nomeLista,
+        descricaoLista: req.body.descricaoLista
+    }
+    Lista.create(lista).then(()=>{
+        let sucesso = true;
+        res.render("agenda.html", {sucesso});
+    }).catch((err)=>{
+        console.log(err);
+        let erro = true;
+        res.render("agenda.html", {erro});
+    });}
+
+function criarGrupo(req, res){console.log(req.body);
+    let criarGrupo = {
+        nomeLista: req.body.nomeLista,
+        descricaoLista: req.body.descricaoLista
+    }
+    Grupo.create(grupo).then(()=>{
+        let sucesso = true;
+        res.render("agenda.html", {sucesso});
+    }).catch((err)=>{
+        console.log(err);
+        let erro = true;
+        res.render("agenda.html", {erro});
+    });}
+
+function criarCategoria(req, res){console.log(req.body);
+    let categoria = {
+        nomeLista: req.body.nomeLista,
+        descricaoLista: req.body.descricaoLista
+    }
+    Categoria.create(categoria).then(()=>{
+        let sucesso = true;
+        res.render("agenda.html", {sucesso});
+    }).catch((err)=>{
+        console.log(err);
+        let erro = true;
+        res.render("agenda.html", {erro});
+    });}
 
 module.exports = {
     indexView,
     cadastrarContato,
-    agendaView
+    agendaView,
+    criarCategoria,
+    criarGrupo,
+    criarLista
 }

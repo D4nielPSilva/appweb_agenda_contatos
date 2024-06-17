@@ -36,6 +36,11 @@ function listarUsuarios(req, res) {
         res.json(err);
     });
 }
+
+function editarUsuario(req, res){}
+function editarUsuarioView(req, res){}
+
+
 module.exports = {
     criarContaView,
     listarUsuarios,

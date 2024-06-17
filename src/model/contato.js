@@ -8,6 +8,7 @@ const Contato = database.define('contato', {
         allowNull: false,
         primaryKey: true
     },
+    
     emailContato: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -28,7 +29,31 @@ const Contato = database.define('contato', {
     telefoneContato: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    idLista: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+            model: 'lista', 
+            key: 'id'
+        }
+    },
+    idGrupo: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+            model: 'Grupo', 
+            key: 'id'
+        }
+    },
+    idCategoria: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+            model: 'Categoria',
+        }
     }
-});
+}
+);
 
 module.exports = Contato;
