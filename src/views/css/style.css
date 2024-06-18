@@ -1,39 +1,45 @@
-body{
+body {
     background-color: #EFEFEF;
 }
-.home{
+
+.home {
     display: flex;
     width: 100%;
     height: 100vh;
     justify-content: center;
     align-items: center;
 }
-.menu{
+
+.menu {
     display: flex;
     flex-direction: column;
     width: 500px;
     height: 500px;
     align-items: center;
 }
-.menu>img{
+
+.menu>img {
     margin-top: 60px;
     width: 130px;
     height: 130px;
 }
-.menu>h1{
+
+.menu>h1 {
     cursor: default;
     margin-top: 20px;
     text-align: center;
     font-weight: 600;
 }
-.menu>p{
+
+.menu>p {
     cursor: default;
     margin-top: 20px;
     width: 50%;
     text-align: center;
     color: #989898;
 }
-.btn-iniciar{
+
+.btn-iniciar {
     margin-top: 30px;
     width: 180px;
     height: 40px;
@@ -45,10 +51,12 @@ body{
     cursor: pointer;
     transition: .3s;
 }
-.btn-iniciar:hover{
+
+.btn-iniciar:hover {
     transform: scale(1.05);
 }
-footer{
+
+footer {
     display: flex;
     background-color: #E7E5E5;
     width: 100%;
@@ -57,12 +65,14 @@ footer{
     align-items: center;
     color: #AFAFAF;
 }
-footer>p{
+
+footer>p {
     cursor: default;
     margin-left: 60px;
     margin-right: 60px;
 }
-.popup{
+
+.popup {
     display: flex;
     flex-direction: column;
     background-color: #E7E7E7;
@@ -72,22 +82,26 @@ footer>p{
     border-radius: 30px;
     box-shadow: 6px 13px 16px #AAAAAA;
 }
-.popup>img{
+
+.popup>img {
     margin-top: 30px;
     width: 90px;
     height: 90px;
 }
-.popup>h2{
+
+.popup>h2 {
     margin-top: 10px;
     font-size: 21px;
     cursor: default;
 }
-.popup>form{
+
+.popup>form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#email{
+
+#email {
     width: 220px;
     height: 34px;
     margin-top: 10px;
@@ -95,7 +109,8 @@ footer>p{
     border: none;
     border-radius: 5px;
 }
-#senha{
+
+#senha {
     margin-top: 20px;
     width: 220px;
     height: 34px;
@@ -103,15 +118,18 @@ footer>p{
     border: none;
     border-radius: 5px;
 }
-::placeholder{
+
+::placeholder {
     color: #A1A1A1;
-    padding-left: 15px;
+    padding-left: 10px;
     font-size: 15px;
 }
-#checkbox-login{
+
+#checkbox-login {
     margin-top: 10px;
 }
-.btn-login{
+
+.btn-login {
     width: 128px;
     height: 30px;
     background-color: black;
@@ -123,19 +141,22 @@ footer>p{
     cursor: pointer;
     transition: .3s;
 }
-.btn-login:hover{
+
+.btn-login:hover {
     transform: scale(1.05);
 }
-#cadastrar{
+
+#cadastrar {
     font-size: 13px;
     margin-top: 20px;
 }
-#cadastrar>a{
+
+#cadastrar>a {
     color: #618DFF;
 }
 
-.box-cadastro{
-    background-color:#E7E7E7;
+.box-cadastro {
+    background-color: #E7E7E7;
     width: 400px;
     height: 520px;
     display: flex;
@@ -145,15 +166,17 @@ footer>p{
     box-shadow: 6px 13px 16px #AAAAAA;
 }
 
-.box-cadastro>h2{
+.box-cadastro>h2 {
     margin-top: 10px;
     font-size: 25px;
 }
-.box-cadastro>form{
+
+.box-cadastro>form {
     display: flex;
     flex-direction: column;
 }
-.nomeSobrenome{
+
+.nomeSobrenome {
     width: 150px;
     height: 34px;
     margin-top: 20px;
@@ -161,10 +184,12 @@ footer>p{
     border: none;
     border-radius: 5px;
 }
-#nome{
+
+#nome {
     margin-right: 15px;
 }
-.dados{
+
+.dados {
     width: 100%;
     height: 34px;
     margin-top: 20px;
@@ -173,7 +198,7 @@ footer>p{
     border-radius: 5px;
 }
 
-.btn-cadastrar{
+.btn-cadastrar {
     background-color: #000;
     color: #fff;
     border: none;
@@ -184,8 +209,163 @@ footer>p{
     width: 100px;
     height: 35px;
     margin-top: 30px;
-    
 }
-.btn-cadastrar:hover{
+
+.btn-cadastrar:hover {
     transform: scale(1.05);
+}
+
+.btn-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-agenda {
+    background-color: #EBEBEB;
+    border-bottom: 1px solid #B8B8B8;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-agenda>h2 {
+    margin-left: 20px;
+    cursor: default;
+}
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.main-agenda {
+    display: flex;
+}
+
+.coluna-listas {
+    display: flex;
+    flex-direction: column;
+    background-color: #E6E6E6;
+    width: 300px;
+    height: 100vh;
+    border-right: 1px solid #B8B8B8;
+}
+
+.busc-contatos {
+    background-color: #F3F3F3;
+    width: 300px;
+    height: 100vh;
+    border-right: 1px solid #B8B8B8;
+    display: flex;
+    justify-content: center;
+}
+
+.opcoes {
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+}
+
+.listas-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+}
+
+.listas-header>h4 {
+    cursor: default;
+}
+
+.listas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lista {
+    display: flex;
+    background-color: #618DFF;
+    color: #fff;
+    width: 200px;
+    height: 26px;
+    border-radius: 8px;
+    justify-content: space-around;
+    align-items: center;
+    cursor: default;
+}
+
+.icon-lista {
+    margin-top: 3px;
+}
+
+.buscar-contatos {
+    position: relative;
+    width: 200px;
+}
+
+.buscar-contatos input {
+    width: 100%;
+}
+
+.submit-lente {
+    position: absolute;
+    top: 0;
+    right:0;
+    z-index: 10;
+    border: none;
+    background: transparent;
+    outline: none;
+    margin-right: 6px;
+    margin-top: 2px;
+}
+
+.submit-line {
+    position: relative;
+    width: 190px;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.submit-line input {
+    width: 100%;
+    height: 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #E4E4E4;
+}
+
+.criar-contato{
+    position: absolute;
+    top: 20;
+    right: 0;
+    margin: 10px 5px;
+}
+.opcoes h4{
+    margin: 10px;
+    cursor: default;
+}
+.opcoes input{
+    width: 200px;
+    height: 18px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: #F1F1F1;
+    border: 1px solid #BCBCBC;
+    border-radius: 6px;
+    padding-left: 5px;
+}.opcoes button{
+    border: none;
+    background-color: transparent;
+    color: #618DFF;
+    margin-left: 10px;
+    margin-top: 20px;
+    cursor: pointer;
 }
