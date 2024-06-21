@@ -4,48 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda Contatos Web</title>
+    <base href="http://localhost:8080/">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
 </head>
 <body>
     <header class="header-agenda">
         <h2>Agenda de Contatos Web</h2>
-        <a href="usuario.html">
+        <div class="user-section" onclick="toggleMenu()">
             <img class="user-icon" src="assets/imagem-do-usuario-com-fundo-preto.png" alt="Icone de Usuário">
-        </a>
+            <div class="user-menu" id="userMenu">
+                <a class="configuracoes" href="/usuario/1">Configurações</a>
+                <a class="sair" href="/sair">Sair</a>
+            </div>
+        </div>
     </header>
     <div class="main-agenda">
         <div class="coluna-listas">
             <header class="listas-header">
                 <h4>Listas</h4>
-                <a href="#">
-                    <img  src="assets/botao-adicionar 1.png" alt="Botão para criar outra lista">
-                </a>
+                <button class="adicionar-lista" id="btnAdicionarLista">
+                    <img src="assets/botao-adicionar 1.png" alt="Botão para criar outra lista">
+                </button>                
             </header>
-             <div class="listas">
-                <div class="lista">
-                    <img class="icon-lista" src="assets/pessoas (1) 1.png" alt="">
-                    <p>Todos os Contatos</p>
-                </div>
-             </div>
-        </div>
-
-        <div class="busc-contatos">
-             <div class="submit-line">
-                <input type="text" name="buscar-contatos" id="buscar-contatos" placeholder="Buscar Contatos"/>
-                <button class="submit-lente" type="submit">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
+            
+            <div class="form-lista" id="formLista">
+                <input type="text" id="nomeLista" placeholder="Nome da Lista">
+                <input type="text" id="descricaoLista" placeholder="Descrição da Lista">
+                <button id="btnSalvarLista">Salvar Lista</button>
+            </div>
+            
+            <div id="listas"></div>
         </div>
         
+        <div class="busc-contatos">
+            <div class="submit-line">
+                <form action="/buscar_contatos" method="get">
+                    <input type="text" name="q" placeholder="Buscar Contatos"/>
+                    <button class="submit-lente" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                        <br>
+                        <br>
+                        {{#busca_contato}}
+                        <div  class="listas">
+                            <a href="/contato/{{id}}" style="text-align: center;">{{ nomeContato }} {{ sobrenomeContato }}</a>
+                        </div>
+                       {{/busca_contato}}
+                        
+                </form>
+            </div>
+        </div>
         <div class="opcoes">
-            <a class="criar-contato" href="contato.html">
+            <a href="/contato" class="criar-contato">
                 <img src="assets/adicionar.png" alt="botão para criar um contato">
             </a>
+            <div class="contats"></div>
         </div>
+        
     </div>
-    
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const database = require('../db');
+const Lista = require('./lista');
 
 const Contato = database.define('contato', {
     id: {
@@ -8,11 +9,9 @@ const Contato = database.define('contato', {
         allowNull: false,
         primaryKey: true
     },
-    
     emailContato: {
         type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
+        allowNull: false
     },
     nomeContato: {
         type: Sequelize.STRING,
@@ -22,38 +21,25 @@ const Contato = database.define('contato', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    dataNascimentoContato: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
     telefoneContato: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    idLista: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        references: {
-            model: 'lista', 
-            key: 'id'
-        }
+    dataNascimentoContato: {
+        type: Sequelize.STRING,
+        allowNull: false
     },
-    idGrupo: {
+    listaId: {
         type: Sequelize.INTEGER,
-        allowNull: true,
+        allowNull: false,
+        default: "01",
         references: {
-            model: 'Grupo', 
+            model: Lista,
             key: 'id'
-        }
-    },
-    idCategoria: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        references: {
-            model: 'Categoria',
         }
     }
-}
-);
+});
+
+Contato.belongsTo(Lista, { foreignKey: 'listaId' });
 
 module.exports = Contato;

@@ -369,3 +369,59 @@ footer>p {
     margin-top: 20px;
     cursor: pointer;
 }
+
+/*CSS adicionados*/
+.form-lista {
+    display: none;
+}
+.lista {
+    display: flex;
+    justify-content:left;
+    align-items:center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.icon-lista {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+.hidden {
+    display: none;
+}
+.user-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.user-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.user-menu {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    min-width: 120px;
+    z-index: 1000;
+}
+.user-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: block;
+}
+.user-menu a:hover {
+    background-color: #f0f0f0;
+}
+.user-section.open .user-menu {
+    display: flex;
+}
