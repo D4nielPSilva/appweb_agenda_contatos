@@ -74,13 +74,24 @@ async function buscarContatos(req, res) {
     res.render('agenda.html', { busca_contato: contatos, busca });
 }
 async function contatoDetalheView(req, res) {
-    const { id } = req.params; // Obter o ID do parâmetro da URL
-    const contato = await Contato.findByPk(id); // Buscar usuário pelo ID
+    const { id } = req.params; 
+    const contato = await Contato.findByPk(id); 
+    const listas = await Lista.findAll(); 
+    
     if (!contato) {
-        return res.status(404).json({ error: 'Usuário não encontrado' });
-        }
-        res.render('detalhes.html', { contato });
+        return res.status(404).json({ error: 'Contato não encontrado' });
+    }
+
+    const listasComSelecao = listas.map(lista => {
+        return {
+            ...lista.dataValues, 
+            isSelected: lista.id === contato.listaId
+        };
+    });
+
+    res.render('detalhes.html', { contato, listas: listasComSelecao });
 }
+
 
 async function editarContato(req, res) {
     const { id } = req.params;
@@ -89,22 +100,35 @@ async function editarContato(req, res) {
         email,
         sobrenome,
         dataNascimento,
-        telefone
-        } = req.body;
+        telefone, 
+        listaId
+    } = req.body;
     
-    const contato = await Contato.findByPk(id);
-    if (!contato) {
-        return res.status(404).send('contato não encontrado');
-    }
-    contato.nomeContato = nome;
-    contato.emailContato - email;
-    contato.sobrenomeContato = sobrenome;
-    contato.dataNascimento = dataNascimento;
-    contato.telefoneContato = telefone;
-    await contato.save();
-    res.redirect(`/contato/${id}`);    
-}
+    try {
+        const lista = await Lista.findByPk(listaId);
+        if (!lista) {
+            return res.status(400).send('Lista inválida');
+        }
 
+        const contato = await Contato.findByPk(id);
+        if (!contato) {
+            return res.status(404).send('Contato não encontrado');
+        }
+        
+        contato.nomeContato = nome;
+        contato.emailContato = email;
+        contato.sobrenomeContato = sobrenome;
+        contato.dataNascimentoContato = dataNascimento;
+        contato.telefoneContato = telefone;
+        contato.listaId = listaId;
+        
+        await contato.save();
+        res.redirect(`/contato/${id}`);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Erro no servidor');
+    }
+}
 
 async function excluirContato(req,res){
     const { id } = req.params;

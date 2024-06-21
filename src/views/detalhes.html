@@ -65,11 +65,19 @@
                 <label for="telefone">Número de telefone:</label>
                 <input type="text" id="telefone" name="telefone" value="{{contato.telefoneContato}}" required>
                 
-                <label for="emailCadastro">Email:</label>
-                <input type="email" id="emailCadastro" name="emailCadastro" value="{{contato.emailContato}}" required>
+                <label for="email">Email:</label>
+                <input type="email" id="emailCadastro" name="email" value="{{contato.emailContato}}" required>
                 
                 <label for="dataNascimento">Data de nascimento:</label>
                 <input type="text" id="dataNascimento" name="dataNascimento" value="{{contato.dataNascimentoContato}}" required>
+                
+                <label for="listaId">Lista:</label>
+                <select name="listaId" id="listaId">
+                    <option value="">Selecione a Lista</option>
+                    {{#listas}}
+                        <option value="{{id}}" {{#isSelected}}selected{{/isSelected}}>{{nomeLista}}</option>
+                    {{/listas}}
+                </select>
                 
                 <button type="submit">Salvar Alterações</button>
             </form>
