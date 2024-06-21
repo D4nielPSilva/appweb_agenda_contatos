@@ -13,7 +13,9 @@
 </head>
 <body>
     <header class="header-agenda">
-        <h2>Agenda de Contatos Web</h2>
+        <a class="btn-main" href="/agenda">
+            <h2>Agenda de Contatos Web</h2>
+        </a>
         <div class="user-section" onclick="toggleMenu()">
             <img class="user-icon" src="assets/imagem-do-usuario-com-fundo-preto.png" alt="Icone de Usuário">
             <div class="user-menu" id="userMenu">
@@ -71,7 +73,7 @@
                 <label for="pais">País/Região:</label>
                 <input type="text" id="pais" name="pais" value="{{usuario.pais}}" required>
                 
-                <button type="submit">Salvar Alterações</button>
+                <button id="btn-user" type="submit">Salvar Alterações</button>
             </form>
         </div>
     </div>

@@ -13,7 +13,9 @@
 </head>
 <body>
     <header class="header-agenda">
-        <h2>Agenda de Contatos Web</h2>
+        <a class="btn-main" href="/agenda">
+            <h2>Agenda de Contatos Web</h2>
+        </a>
         <div class="user-section" onclick="toggleMenu()">
             <img class="user-icon" src="assets/imagem-do-usuario-com-fundo-preto.png" alt="Icone de Usuário">
             <div class="user-menu" id="userMenu">
@@ -28,16 +30,16 @@
                 <h4>Listas</h4>
                 <button class="adicionar-lista" id="btnAdicionarLista">
                     <img src="assets/botao-adicionar 1.png" alt="Botão para criar outra lista">
-                </button>                
+                </button>              
             </header>
             
             <div class="form-lista" id="formLista">
-                <input type="text" id="nomeLista" placeholder="Nome da Lista">
-                <input type="text" id="descricaoLista" placeholder="Descrição da Lista">
-                <button id="btnSalvarLista">Salvar Lista</button>
+                <p><input type="text" id="nomeLista" placeholder="Nome da Lista"></p>
+                <p><input type="text" id="descricaoLista" placeholder="Descrição da Lista"></p>
+                <p><button id="btnSalvarLista">Salvar Lista</button></p>
             </div>
             
-            <div id="listas"></div>
+            <div class="contato" id="listas"></div>
         </div>
         
         <div class="busc-contatos">
